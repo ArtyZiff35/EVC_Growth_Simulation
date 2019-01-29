@@ -24,5 +24,10 @@ A Round Robin execution is implemented among the threads.
 
 In addition, each thread P_i maintains a count of the number of simulated events it has processed after dequeueing from the local queue Q_i. For debugging purposes, it is useful to maintain 3 arrays: Send_simulated[1,n], Receive_simulated[1,n], and Internal_simulated[1,n] to count the corresponding number of send/receive/internal events dequeued and processed from each Q_i. In addition to the required EVC, it is useful to maintain the (traditional) vector clock VC of the latest event simulated by each thread.
 
-# Documentation
+## EVC Growth
+As it is possible to see from the following chart, increasing the number of processes taking part in the simulation greatly speeds up the number of bits necessary to store the EVC value:
+
+![Bit size increase](/images/bitgrowth_n100.png)
+
+## Documentation
 A complete documentation explaining the results obtained can be found in my documentation paper: https://github.com/ArtyZiff35/EVC_Growth_Simulation/blob/master/paper/EVC_Growth_Rate_Simulation_Paper_ArturoCardone.pdf
